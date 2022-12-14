@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+  ::ng-deep.mat-paginator-page-size, ::ng-deep.mat-paginator-navigation-first, ::ng-deep.mat-paginator-navigation-last{
+    display: none !important;
+  }
+}

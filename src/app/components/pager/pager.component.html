@@ -1,0 +1,10 @@
+<mat-toolbar class="toolbar-dark" style="background: white;">
+  <mat-toolbar-row class="d-flex justify-content-between">
+    <div>
+      <button mat-icon-button type="button" (click)="refresh.next()"><mat-icon>refresh</mat-icon></button>
+    </div>
+
+    <mat-paginator showFirstLastButtons="true" [length]="resultsLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+  </mat-toolbar-row>
+</mat-toolbar>
+

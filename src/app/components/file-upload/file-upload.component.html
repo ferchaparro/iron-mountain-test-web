@@ -1,0 +1,46 @@
+<div>
+  <div class="col-sm-12">
+    <div #dropZone
+         class="dropZone"
+         [ngClass]="{'drop-hover': overZone}"
+         (drop)="$event.preventDefault(); dropFile($event)"
+         (dragleave)="$event.preventDefault(); overZone = false;"
+         (dragover)="$event.preventDefault(); overZone = true;"
+         (click)="hiddenInput.click()">
+      <div style="text-align: center">
+        <div class="inner-text" style="margin-top: auto; text-align: center">{{placeholderText|translate}}</div>
+        <div><mat-icon color="primary" style="margin-bottom:auto; margin-top: 12px;">cloud_upload</mat-icon></div>
+      </div>
+    </div>
+  </div>
+  <mat-table [dataSource]="files" class="mat-elevation-z5 mt-3">
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index"> {{i+1}} </mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> {{'FILE_UPLOADER.FILE_NAME'|translate}} </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      <mat-footer-cell *matFooterCellDef> {{'FILE_UPLOADER.TOTAL'|translate}} </mat-footer-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef class="d-flex justify-content-end me-5"><span> {{'FILE_UPLOADER.WEIGHT'|translate}} </span></mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-flex justify-content-end me-5"><span>{{element.size/1024 |number: '1.0-2'}} kb</span></mat-cell>
+      <mat-footer-cell *matFooterCellDef class="d-flex justify-content-end me-5"><span>{{((files|totalWeight)||0)/1024 |number: '1.0-2'}} kb</span></mat-footer-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index"><button mat-icon-button type="button" (click)="deleteFile(i)"><mat-icon>delete</mat-icon></button> </mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+  </mat-table>
+  <input #hiddenInput type="file" multiple (change)="loadFiles($event)" style="display:none" [accept]="accept">
+</div>

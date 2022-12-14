@@ -1,0 +1,55 @@
+<form (ngSubmit)="onSubmit(form.value)" [formGroup]="form">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-content>
+            <h3>{{('CONTACT_FORM.'+hint)|translate}}</h3>
+            <div class="row">
+                <mat-form-field class="col-3 col-md-2" appearance="outline" *ngIf="form.controls.id.value">
+                    <mat-label>{{'CONTACTS.COLUMNS.ID'|translate}}</mat-label>
+                    <input matInput type="text" formControlName="id" [readonly]="true">
+                </mat-form-field>
+                <mat-form-field [class]="form.controls.id.value?'col-9 col-md-10':'col-12'" appearance="outline">
+                    <mat-label>{{'CONTACTS.COLUMNS.NAME'|translate}}</mat-label>
+                    <input #fullName matInput type="text" formControlName="fullName" [placeholder]="'CONTACT_FORM.PLACEHOLDERS.NAME'|translate">
+                    <mat-hint align="end">{{form.controls.fullName.value?.length||0}}/50</mat-hint>
+                    <mat-error *ngIf="form.controls.fullName.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
+                    <mat-error *ngIf="form.controls.fullName.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-12 col-md-6" appearance="outline">
+                    <mat-label>{{'CONTACTS.COLUMNS.PHONE'|translate}}</mat-label>
+                    <input matInput type="text" formControlName="phone" [placeholder]="'CONTACT_FORM.PLACEHOLDERS.PHONE'|translate">
+                    <mat-hint align="end">{{form.controls.phone.value?.length||0}}/16</mat-hint>
+                    <mat-error *ngIf="form.controls.phone.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
+                    <mat-error *ngIf="form.controls.phone.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-12 col-md-6" appearance="outline">
+                    <mat-label>{{'CONTACTS.COLUMNS.CURP'|translate}}</mat-label>
+                    <input matInput type="text" formControlName="uniquePopulationRegistryCode" [placeholder]="'CONTACT_FORM.PLACEHOLDERS.CURP'|translate">
+                    <mat-hint align="end">{{form.controls.uniquePopulationRegistryCode.value?.length||0}}/18</mat-hint>
+                    <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
+                    <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
+                    <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.exist">{{'CONTACT_FORM.FORM_ERRORS.EXIST_CURP'|translate}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-12" appearance="outline">
+                    <mat-label>{{'CONTACTS.COLUMNS.ADDRESS'|translate}}</mat-label>
+                    <input matInput type="text" formControlName="address" [placeholder]="'CONTACT_FORM.PLACEHOLDERS.ADDRESS'|translate">
+                    <mat-hint align="end">{{form.controls.address.value?.length||0}}/100</mat-hint>
+                    <mat-error *ngIf="form.controls.address.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
+                    <mat-error *ngIf="form.controls.address.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
+                </mat-form-field>
+                <ng-container *ngIf="form.controls.id.value">
+                    <mat-form-field class="col-6" appearance="outline">
+                        <mat-label>{{'CONTACTS.COLUMNS.CREATION_DATE'|translate}}</mat-label>
+                        <input matInput type="text" formControlName="creationDate" [readonly]="true">
+                    </mat-form-field>
+                    <mat-form-field class="col-6" appearance="outline">
+                        <mat-label>{{'CONTACTS.COLUMNS.LAST_UPDATE'|translate}}</mat-label>
+                        <input matInput type="text" formControlName="lastUpdate" [readonly]="true">
+                    </mat-form-field>
+                </ng-container>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-center">
+            <button mat-raised-button color="primary" style="width: calc(100% - 12px);">{{'CONTACT_FORM.SAVE_BUTTON'|translate}}</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

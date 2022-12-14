@@ -1,0 +1,57 @@
+<div class="container-fluid py-100 vh-100" style="background-color: #f0f2f5">
+  <div class="row py-0 py-md-4">
+    <div class="col-12 col-md-6 col-lg-7 pb-2 pb-md-0">
+      <div class="d-flex justify-content-center h-100">
+        <div class="col-12 col-md-9 align-self-center align-middle">
+          <div class="logo-jumbo mb-3">{{'GENERIC.NAME'|translate}}</div>
+          <h1>{{'LOGIN.PARAGRAPH_1'|translate}}</h1>
+          <div class="row">
+            <div class="col-12 col-md-6" *ngFor="let user of [{title: 'TITLE_PARAGRAPH_2', content: 'PARAGRAPH_2'}, {title: 'TITLE_PARAGRAPH_3', content: 'PARAGRAPH_3'}]">
+              <mat-card class="mat-elevation-z3 mb-3 mb-md-0">
+                <mat-card-header class="d-flex justify-content-center">
+                  <mat-card-title>
+                    {{('LOGIN.'+user.title)|translate}}
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="d-flex justify-content-center">
+                  <h2>{{('LOGIN.'+user.content)|translate}}</h2>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 pt-2 pt-md-0">
+      <div class="d-flex justify-content-start h-100">
+        <div class="col-12 col-md-9 align-self-center align-middle">
+          <mat-card class="mat-elevation-z3">
+            <form (submit)="onLogin(form.value)" [formGroup]="form">
+              <mat-card-content class="mb-0">
+                <mat-form-field appearance="outline" class="col-12 mff-pb-1">
+                  <mat-label>{{'LOGIN.USERNAME'|translate}}</mat-label>
+                  <input matInput type="text" name="username" formControlName="username">
+                  <mat-error *ngIf="form.controls.username.errors?.required">{{'GENERIC.REQUIRED'|translate}}</mat-error>
+                  <mat-icon matPrefix>alternate_email</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-12 mff-pb-1">
+                  <mat-label>{{'LOGIN.PASSWORD'|translate}}</mat-label>
+                  <input matInput [type]="hidePassword?'password':'text'" formControlName="password" >
+                  <mat-icon matPrefix>lock_outline</mat-icon>
+                  <mat-icon matSuffix class="clickable" (click)="hidePassword=!hidePassword">{{hidePassword?'visibility':'visibility_off'}}</mat-icon>
+                </mat-form-field>
+                <span *ngIf="error" class="col-12 d-flex justify-content-center flex-wrap">
+                  <mat-error>{{('MESSAGES.'+error)|translate}}</mat-error>
+                </span>
+              </mat-card-content>
+              <mat-card-actions class="d-flex justify-content-center mat-card-actions-no-y-space">
+                <button mat-raised-button style="width: calc(100% - 16px);" color="primary">{{'LOGIN.LOGIN_BUTTON'|translate}}</button>
+              </mat-card-actions>
+            </form>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

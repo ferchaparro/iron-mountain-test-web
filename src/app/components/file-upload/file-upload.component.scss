@@ -1,0 +1,39 @@
+$primary: rgb(63, 81, 181);
+$primary_trans: rgba(63, 81, 181, 0.15);
+
+.dropZone {
+  border: 2px dashed $primary;
+  height:140px;
+  max-width: 98vw;
+  max-height: 50vh;
+  transition: 0.5s all;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.drop-hover {
+  background-color: $primary_trans;
+}
+
+.inner-text {
+  font-size: 20px;
+}
+
+.transition {
+  transition: opacity 1s linear;
+}
+
+::ng-deep .mat-column-position {
+  max-width: 60px !important;
+}
+
+::ng-deep .mat-column-delete {
+  max-width: 60px !important;
+}
+
+::ng-deep .mat-column-weight {
+  max-width: 120px !important;
+}

@@ -1,0 +1,110 @@
+{
+    "MESSAGES": {
+        "USER_CANT_BE_NULL": "User can't be null.",
+        "USER_EXISTS": "User alreadt exist.",
+        "USER_NOT_FOUND": "User not found.",
+        "INCORRECT_PASSWORD": "Incorrect password.",
+    
+        "CONTACT_CANT_BE_NULL": "Contact can't be null.",
+        "CONTACT_EXISTS": "Contact alreadt exist.",
+        "CONTACT_NOT_FOUND": "Contact not found.",
+        "CONTACT_SAVED_OK": "Contact was saved successfully.",
+        "CONTACT_UPDATED_OK": "Contact was updated successfully.",
+        "CONTACT_DELETED_OK": "Contact was deleted successfully.",
+    
+        "TOKEN_USER_ID_NULL": "Invalid session.",
+        "CONTACT_DELETION_CONFIRMATION": "Delete contact?",
+        "DELETE_CONFIRM_1": "Do you want to delete the contact \"{{fullName}}\".",
+        "DELETE_CONFIRM_2": "Do you want continue?",
+        "CANCEL_BUTTON":"CANCEL",
+        "OK_BUTTON": "ACCEPT",
+        "DELETE_OK_BUTTON": "DELETE",
+        "ALERT_TITLE": "Notification!",
+        "Forbidden": "This action is forbidden.",
+        "FILE_UPLOADED": "File will be processed in background, {{toSave}} contact will be saved and {{omitted}} contacts was omitted.",
+        "FILE_NOT_SUPPORTED": "File type is not supported.",
+        "FILE_CONTENT_NOT_CORRECT": ["CSV Content is not correct.", "CSV need the first row with the following headers:", "name, address, phone, curp"],
+        "FILE_LIMIT_ALERT": "You can upload {{max}} file at time.",
+        "FILE_SIZE_LIMIT_ALERT": "Max file size is {{maxSize}}Mb."
+    },
+    "GENERIC": {
+        "NAME": "IM Test!",
+        "REQUIRED": "Required"
+    },
+    "MAIN":{
+        "LOGOUT": "Log out"
+    },
+    "LOGIN": {
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "LOGIN_BUTTON": "Log in",
+        "PARAGRAPH_1": "Welcome to Fernando Gastelum' test application. You can log in with the following users.",
+        "TITLE_PARAGRAPH_2": "ALL PERMISSIONS",
+        "TITLE_PARAGRAPH_3": "READ ONLY",
+        "PARAGRAPH_2": "admin/admin123",
+        "PARAGRAPH_3": "reader/reader123"
+        
+    },
+    "CONTACTS": {
+        "TITLE": "Contacts",
+        "SEARCH": "Search",
+        "SEARCH_PLACEHOLDER": "Name, address, phone, CURP.",
+        "IMPORT_BUTTON": "Import",
+        "ADD_BUTTON": "Add",
+        "COLUMNS": {
+            "ID": "ID",
+            "NAME": "Name",
+            "ADDRESS": "Address",
+            "PHONE": "Phone",
+            "CURP": "CURP",
+            "CREATION_DATE": "Created at",
+            "LAST_UPDATE": "Last update"
+        }
+    },
+    "PAGER": {
+        "FIRST_PAGE": "First page",
+        "LAST_PAGE": "Last page",
+        "ITEMS_PER_PAGE": "Items per page",
+        "NEXT_PAGE": "Next page",
+        "PREVIOUS_PAGE": "Previous Page",
+        "PAGE_OF": "Page {{current}} of {{total}}"
+    },
+    "NEW_CONTACTS": {
+        "TITLE": "New contact registry",
+        "BACK_BUTTON": "Back"
+    },
+    "EDIT_CONTACTS": {
+        "TITLE": "Update contact",
+        "BACK_BUTTON": "Back"
+    },
+    "CONTACT_FORM": {
+        "SAVE_HINT": "To register a contact, you must fill the form and click on the \"SAVE\" button. All fields are required.",
+        "UPDATE_HINT": "You can update any data on the form, remember click on the \"SAVE\" button to save your changes.",
+        "SAVE_BUTTON": "SAVE",
+        "FORM_ERRORS": {
+            "REQUIRED": "Required",
+            "MAX_CHARACTERS": "You can only input {{max}} characters",
+            "EXIST_CURP": "CURP already registered"
+        },
+        "PLACEHOLDERS": {
+            "NAME": "ex. Fernando Gastelum Chaparro",
+            "ADDRESS": "ex. Nogales 932, La Joya",
+            "PHONE": "ex. 644 143 0690",
+            "CURP": "ex. GACF870604HSRSHR06"
+        }
+    },
+    "FILE_UPLOADER": {
+        "PLACEHOLDER": "You can drop your file in this area ot click to examine.",
+        "TITLE": "Import CSV file",
+        "BACK_BUTTON": "Back",
+        "UPLOAD_BUTTON": "UPLOAD FILE",
+        "FILE_NAME": "File name",
+        "WEIGHT": "Weight",
+        "TOTAL": "Total"
+    },
+    "MENU": {
+        "CONTACTS": "Contacts",
+        "NEW_CONTACT": "New contact",
+        "IMPORT": "Import"
+    }
+}

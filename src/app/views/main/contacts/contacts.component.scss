@@ -1,0 +1,42 @@
+::ng-deep .mat-column-id {
+    max-width: 60px;
+}
+
+::ng-deep .mat-column-phone {
+    max-width: 130px;
+}
+
+::ng-deep .mat-column-uniquePopulationRegistryCode {
+    max-width: 200px;
+}
+
+::ng-deep .mat-column-creationDate {
+    max-width: 150px;
+}
+
+::ng-deep .mat-column-lastUpdate {
+    max-width: 150px;
+}
+
+::ng-deep .mat-column-actions {
+  max-width: 100px;
+}
+
+::ng-deep .slim > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix {
+    padding-top: 0.3em;
+     padding-bottom: 0.9em;
+     height: 43.5px !important;
+   }
+   ::ng-deep .slim > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix > .mat-form-field-label-wrapper {
+     padding-top: 0.3em;
+     padding-bottom: .54375em;
+   }
+   
+   ::ng-deep .slim:not(.mat-focused) > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix > .mat-form-field-label-wrapper > .mat-form-field-label.mat-empty {
+     top: 1.3em;
+   }
+   
+   ::ng-deep .slim > .mat-form-field-wrapper {
+     padding: 0;
+     margin:0 !important;
+   }

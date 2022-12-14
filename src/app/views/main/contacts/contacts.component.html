@@ -1,0 +1,73 @@
+<div class="py-3 row d-flex justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="col-12 d-flex justify-content-between align-middle align-self-center flex-row mb-3">
+            <div class="d-flex justify-content-start align-self-center align-middle me-3">
+              <mat-icon class="align-middle align-self-center me-1">person</mat-icon>
+              <h1 class="mb-0">{{'CONTACTS.TITLE'|translate}}</h1>
+            </div>
+            <div  class="d-flex justify-content-end align-self-center align-middle">
+              <button mat-icon-button class="align-self-center align-middle me-3" type="button" (click)="hideFilter=!hideFilter;form.controls.filter.setValue('')"><mat-icon>{{hideFilter?'filter_alt':'chevron_right'}}</mat-icon></button>
+              <form [formGroup]="form" [@openClose]="hideFilter ? 'closed':'open'" style="width: 300px">
+                <mat-form-field appearance="outline" class="col-12 slim">
+                  <mat-label>{{'CONTACTS.SEARCH'|translate}}</mat-label>
+                  <input matInput formControlName="filter" [placeholder]="'CONTACTS.SEARCH_PLACEHOLDER'|translate">
+                  <span matPrefix><mat-icon>search</mat-icon></span>
+                </mat-form-field>
+              </form>
+              <button mat-stroked-button class="align-self-center align-middle mx-3" type="button" (click)="onClickImport()">{{'CONTACTS.IMPORT_BUTTON'|translate}} <mat-icon>upload_file</mat-icon></button>
+              <button mat-raised-button color="primary" class="align-self-center align-middle" type="button" (click)="onClickAdd()">{{'CONTACTS.ADD_BUTTON'|translate}} <mat-icon>add</mat-icon></button>
+              
+            </div>
+        </div>
+        <div class="mat-elevation-z8 mb-3" *ngIf="{_data: contacts$ | async} as data">
+            <mat-table class="table-container" [dataSource]="data._data?.content" matSort matSortActive="creationDate" matSortDisableClear matSortDirection="desc">
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.ID'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.id|number:'3.0-0'}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="fullName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.NAME'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.fullName}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="address">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.ADDRESS'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.address}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="phone">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.PHONE'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.phone}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="uniquePopulationRegistryCode">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.CURP'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.uniquePopulationRegistryCode}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="creationDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.CREATION_DATE'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.creationDate|date}}</mat-cell>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="lastUpdate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header">{{'CONTACTS.COLUMNS.LAST_UPDATE'|translate}}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{row.lastUpdate|date}}</mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="dark-header"></mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                      <button mat-icon-button color="primary" (click)="onClickEdition(row)"><mat-icon>edit</mat-icon></button>
+                      <button mat-icon-button color="warn" (click)="onClickDelete(row)"><mat-icon>delete</mat-icon></button>
+                    </mat-cell>
+                  </ng-container>
+        
+                <mat-header-row *matHeaderRowDef="displayedColumns; "></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+              <pager (refresh)="refresh()" [resultsLength]="data._data?.totalElements"></pager>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+  ::ng-deep .mat-column-actions {
+    max-width: 130px;
+  }
+}
+@media (max-width: 767px) {
+  ::ng-deep .mat-column-actions {
+    max-width: 70px;
+  }
+}
+
+::ng-deep .mat-column-placeString {
+  max-width: 120px;
+}
+
+.table-header > mat-header-cell, th {
+  font-size: 16px;
+  //text-align: center !important;
+}
+
+table {
+  width: 100%;
+}

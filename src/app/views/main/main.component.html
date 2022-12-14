@@ -1,0 +1,39 @@
+<div class="main-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="mat-elevation-z6 toolbar toolbar-white">
+    <!-- <img src="../../../assets/images/logo.png" class="d-none d-md-inline img-cover" height="50" alt="Logo de la web"> -->
+    <span class="logo-text d-none d-md-inline">{{'GENERIC.NAME'|translate}}</span>
+    <button mat-icon-button class="d-none d-md-inline" (click)="snav.toggle()" style="transform: translateX(80px);">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button class="d-md-none" (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span class="logo-text logo-text-no-space d-md-none">{{'GENERIC.NAME'|translate}}</span>
+    <span class="spacer"></span>
+    <button mat-icon-button type="button" [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>{{'MAIN.LOGOUT'|translate}}</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="mat-elevation-z4" [mode]="'over'">
+      <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let nav of fillerNav$|async" (click)="navigate(nav.route)" [value]="nav">
+          <mat-icon mat-list-icon>{{nav.icon}}</mat-icon>
+          <span mat-line>{{nav.label|translate}}</span>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="container-fluid">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: "Chainwhacks";
+  src: local("Chainwhacks"), url("/assets/fonts/Chainwhacks-vm72E.ttf") format('truetype');
+}
+
+.logo-text {
+  font-family: Chainwhacks !important;
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+               1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  color: limegreen;
+  // font-size: 30px;
+  transform: scale(2) translateX(20px);
+}
+
+.logo-text-no-space {
+  transform: scale(2) translateX(0px);
+}
+
+.logo-text-space-10 {
+  transform: scale(2) translateX(10px);
+}
+
+.logo-jumbo {
+  font-family: Chainwhacks !important;
+  text-shadow: 9px 0 #000, -9px 0 #000, 0 9px #000, 0 -9px #000,
+               4.5px 4.5px #000, -4.5px -4.5px #000, 4.5px -4.5px #000, -4.5px 4.5px #000;
+  color: limegreen;
+  font-size: 90px;
+  line-height: 90px;
+  padding-left: 9px;
+}
+
+@media (max-width: 370px) {
+  .logo-jumbo {
+    font-family: Chainwhacks !important;
+    text-shadow: 8px 0 #000, -8px 0 #000, 0 8px #000, 0 -8px #000,
+                 4px 4px #000, -4px -4px #000, 4px -4px #000, -4px 4px #000;
+    color: limegreen;
+    font-size: 80px;
+    line-height: 80px;
+    padding-left: 8px;
+  }
+}
+
+.toolbar-white {
+  background-color: #fff;
+}
+
+.toolbar {
+  z-index: 2;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pt-72 {
+  padding-top: 100px;
+}
+
+.py-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.py-72 {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.mff-pb-1 .mat-form-field-wrapper {
+padding-bottom: 10px;
+}
+
+.mat-card-actions-no-y-space {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+

@@ -1,0 +1,10 @@
+<div>
+  <h2 *ngIf="data.showTitle" class="card-title">{{data.title || (data.confirm?'Confirmaci&oacute;n':'Notificaci&oacute;n del sistema')}}</h2>
+  <mat-dialog-content>
+    <p *ngFor="let message of data.message">{{message}}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button *ngIf="data.confirm" (click)="onClose(false)">{{data.cancelButtonText || 'CANCELAR'}}</button>
+    <button mat-raised-button color="{{data.type}}" (click)="onClose(true)">{{data.okButtonText || 'ACEPTAR'}}</button>
+  </mat-dialog-actions>
+</div>

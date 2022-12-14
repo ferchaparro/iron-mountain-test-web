@@ -1,0 +1,110 @@
+{
+    "MESSAGES": {
+        "USER_CANT_BE_NULL": "El usuario no puede estar vacío.",
+        "USER_EXISTS": "El usuario ya existe.",
+        "USER_NOT_FOUND": "No se encontró el usuario.",
+        "INCORRECT_PASSWORD": "Contraseña incorrecta.",
+    
+        "CONTACT_CANT_BE_NULL": "El contacto no puede estar vacío.",
+        "CONTACT_EXISTS": "El contacto ya existe.",
+        "CONTACT_NOT_FOUND": "No se encontró el contacto.",
+        "CONTACT_SAVED_OK": "El contacto se guardó correctamente.",
+        "CONTACT_UPDATED_OK": "El contacto se modificó correctamente.",
+        "CONTACT_DELETED_OK": "El contacto se borró correctamente.",
+    
+        "TOKEN_USER_ID_NULL": "Su sesión es inválida.",
+        "CONTACT_DELETION_CONFIRMATION": "¿Borrar contacto?",
+        "DELETE_CONFIRM_1": "Esta por borrar el contacto \"{{fullName}}\".",
+        "DELETE_CONFIRM_2": "¿Quiere continuar?",
+        "CANCEL_BUTTON":"CANCELAR",
+        "OK_BUTTON": "ACEPTAR",
+        "DELETE_OK_BUTTON": "BORRAR",
+        "ALERT_TITLE": "Notificación!",
+        "Forbidden": "Tienes prohibida esta acción.",
+        "FILE_UPLOADED": "El archivo se procesará en segundo plano, se guardarán {{toSave}} contactos y se omitieron {{omitted}} contactos.",
+        "FILE_NOT_SUPPORTED": "Tipo de archivo no soportado.",
+        "FILE_CONTENT_NOT_CORRECT": ["El contenido del archivo CSV no es correcto.", "Es necesario que la primera fila contenga los siguientes encabezados:", "name, address, phone, curp"],
+        "FILE_LIMIT_ALERT": "Solo se puede subir {{max}} archivo a la vez.",
+        "FILE_SIZE_LIMIT_ALERT": "El tamaño máximo del archivo es {{maxSize}}Mb."
+    },
+    "GENERIC": {
+        "NAME": "IM Test!",
+        "REQUIRED": "Obligatorio"
+    },
+    "MAIN":{
+        "LOGOUT": "Salir"
+    },
+    "LOGIN": {
+        "USERNAME": "Nombre de usuario",
+        "PASSWORD": "Contraseña",
+        "LOGIN_BUTTON": "Iniciar Sesión",
+        "PARAGRAPH_1": "Bienvenido a la aplicación de prueba de Fernando Gastelum. Pordrás iniciar sesión con los usuarios que se muestran a continuación.",
+        "TITLE_PARAGRAPH_2": "TODOS LOS PERMISOS",
+        "TITLE_PARAGRAPH_3": "SOLO LECTURA",
+        "PARAGRAPH_2": "admin/admin123",
+        "PARAGRAPH_3": "reader/reader123"
+        
+    },
+    "CONTACTS": {
+        "TITLE": "Contactos",
+        "SEARCH": "Búsqueda",
+        "SEARCH_PLACEHOLDER": "Nombre, direccion, teléfono, CURP.",
+        "IMPORT_BUTTON": "Importar",
+        "ADD_BUTTON": "Agregar",
+        "COLUMNS": {
+            "ID": "ID",
+            "NAME": "Nombre",
+            "ADDRESS": "Dirección",
+            "PHONE": "Teléfono",
+            "CURP": "CURP",
+            "CREATION_DATE": "Fecha de creación",
+            "LAST_UPDATE": "Ultima modificación"
+        }
+    },
+    "PAGER": {
+        "FIRST_PAGE": "Primera página",
+        "LAST_PAGE": "Ultima página",
+        "ITEMS_PER_PAGE": "Elementos por página",
+        "NEXT_PAGE": "Siguiente página",
+        "PREVIOUS_PAGE": "Página anterior",
+        "PAGE_OF": "Página {{current}} de {{total}}"
+    },
+    "NEW_CONTACTS": {
+        "TITLE": "Registrar nuevo contacto",
+        "BACK_BUTTON": "Regresar"
+    },
+    "EDIT_CONTACTS": {
+        "TITLE": "Editar contacto existente",
+        "BACK_BUTTON": "Regresar"
+    },
+    "CONTACT_FORM": {
+        "SAVE_HINT": "Para registrar al contacto, debe llenar el formulario y dar click en el botón \"GUARDAR\". Todos los campos son obligatorios.",
+        "UPDATE_HINT": "Puede modificar cualquier información del formulario, recuerde dar click en el botón \"GUARDAR\" para guardar sus cambios.",
+        "SAVE_BUTTON": "GUARDAR",
+        "FORM_ERRORS": {
+            "REQUIRED": "Obligatorio",
+            "MAX_CHARACTERS": "Solo admite {{max}} caracteres",
+            "EXIST_CURP": "Ya está registrada la CURP"
+        },
+        "PLACEHOLDERS": {
+            "NAME": "ej. Fernando Gastelum Chaparro",
+            "ADDRESS": "ej. Nogales 932, La Joya",
+            "PHONE": "ej. 644 143 0690",
+            "CURP": "ej. GACF870604HSRSHR06"
+        }
+    },
+    "FILE_UPLOADER": {
+        "PLACEHOLDER": "Puedes soltar tu archivo en el area o click para examinar.",
+        "TITLE": "Importar archivo CSV",
+        "BACK_BUTTON": "Regresar",
+        "UPLOAD_BUTTON": "SUBIR ARCHIVO",
+        "FILE_NAME": "Nombre de archivo",
+        "WEIGHT": "Peso",
+        "TOTAL": "Total"
+    },
+    "MENU": {
+        "CONTACTS": "Contactos",
+        "NEW_CONTACT": "Nuevo contacto",
+        "IMPORT": "Importar"
+    }
+}
