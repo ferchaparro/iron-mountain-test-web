@@ -20,6 +20,7 @@
                     <mat-hint align="end">{{form.controls.phone.value?.length||0}}/16</mat-hint>
                     <mat-error *ngIf="form.controls.phone.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
                     <mat-error *ngIf="form.controls.phone.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
+                    <mat-error *ngIf="form.controls.phone.errors?.pattern">{{'CONTACT_FORM.FORM_ERRORS.PHONE_PATTERN'|translate}}</mat-error>
                 </mat-form-field>
                 <mat-form-field class="col-12 col-md-6" appearance="outline">
                     <mat-label>{{'CONTACTS.COLUMNS.CURP'|translate}}</mat-label>
@@ -28,6 +29,7 @@
                     <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.required">{{'CONTACT_FORM.FORM_ERRORS.REQUIRED'|translate}}</mat-error>
                     <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.maxlength as error">{{'CONTACT_FORM.FORM_ERRORS.MAX_CHARACTERS'|translate:{max:error.requiredLength} }}</mat-error>
                     <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.exist">{{'CONTACT_FORM.FORM_ERRORS.EXIST_CURP'|translate}}</mat-error>
+                    <mat-error *ngIf="form.controls.uniquePopulationRegistryCode.errors?.pattern">{{'CONTACT_FORM.FORM_ERRORS.CURP_PATTERN'|translate}}</mat-error>
                 </mat-form-field>
                 <mat-form-field class="col-12" appearance="outline">
                     <mat-label>{{'CONTACTS.COLUMNS.ADDRESS'|translate}}</mat-label>

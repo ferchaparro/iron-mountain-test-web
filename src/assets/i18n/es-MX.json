@@ -84,7 +84,9 @@
         "FORM_ERRORS": {
             "REQUIRED": "Obligatorio",
             "MAX_CHARACTERS": "Solo admite {{max}} caracteres",
-            "EXIST_CURP": "Ya está registrada la CURP"
+            "EXIST_CURP": "Ya está registrada la CURP",
+            "CURP_PATTERN": "La CURP no es correcta. (ej. GACF870604HSRSHR06)",
+            "PHONE_PATTERN": "El teléfono no es correcto. (ej. 644 143 0690)"
         },
         "PLACEHOLDERS": {
             "NAME": "ej. Fernando Gastelum Chaparro",

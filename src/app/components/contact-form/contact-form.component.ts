@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from 'src/app/core/services/operation';
-import { ContactValidators } from 'src/app/core/validators/operation';
+import { ContactValidators, CURP_REGEX, PHONE_REGEX } from 'src/app/core/validators/operation';
 import { Contact } from 'src/app/model/operation/contact.model';
 
 
@@ -26,9 +26,9 @@ export class ContactFormComponent implements OnInit {
     this.form = this.fb.group({
       id: [''],
       fullName: ['', [Validators.required, Validators.maxLength(50)]],
-      phone: ['', [Validators.required, Validators.maxLength(16)]],
+      phone: ['', [Validators.required, Validators.maxLength(16), Validators.pattern(PHONE_REGEX)]],
       address: ['', [Validators.required, Validators.maxLength(100)]],
-      uniquePopulationRegistryCode: ['', [Validators.required, , Validators.maxLength(18)], [ContactValidators.curpValidator(this.contactsService, this.contact?.id)]],
+      uniquePopulationRegistryCode: ['', [Validators.required, , Validators.maxLength(18), Validators.pattern(CURP_REGEX)], [ContactValidators.curpValidator(this.contactsService, this.contact?.id)]],
       creationDate: [''],
       lastUpdate: ['']
     })
